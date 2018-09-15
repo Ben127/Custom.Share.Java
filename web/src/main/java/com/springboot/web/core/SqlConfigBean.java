@@ -1,6 +1,8 @@
 package com.springboot.web.core;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  *  SQL Server 配置信息
@@ -8,7 +10,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author Benny
  *
  */
+
+@Configuration
 @ConfigurationProperties(prefix="sql")
+@PropertySource("classpath:sql.properties")
 public class SqlConfigBean {
 	private String Server;
 	public String getServer() {
